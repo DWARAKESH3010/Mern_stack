@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="in1">
+    <input type="text" id="in2">
+    <button onclick="add()">add</button>
+    <button onclick="sub()">sub</button>
+    <marquee><h1 id="result"> result </h1></marquee>
+
+    <script>
+        function add(){
+            let in1 = document.getElementById("in1")
+            let in2 = document.getElementById("in2")
+            in1 = in1.value;
+            in2 = in2.value;
+            addiction = Number(in1) + Number(in2)
+            document.getElementById("result").innerHTML = addiction;
+        }
+        function sub(){
+            let in1 = document.getElementById("in1")
+            let in2 = document.getElementById("in2")
+            in1 = in1.value;
+            in2 = in2.value;
+            subtract = Number(in1) - Number(in2)
+            document.getElementById("result").innerHTML = subtract;
+        }
+    </script>
+</body>
+</html>

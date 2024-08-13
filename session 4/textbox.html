@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+    <style>
+        .red{
+            border: 2px solid red;       
+        }
+        .blue{
+            border: 2px solid blue;  
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <input type = "text" id="input_id">
+    <button id="submit"> submit</button>
+    <h1 id="h1_id"></h1>
+
+    <script>
+        
+        func = () =>{
+        
+        let input_id = document.getElementById("input_id");
+        let val = input_id.value;
+        if (val == ""){
+            input_id.classList.add("red")
+        }else{
+            document.getElementById("h1_id").innerHTML = val;
+            input_id.classList.add("blue")
+        }
+        }
+        
+        document.querySelector("#submit").addEventListener("click",func)
+
+        
+        
+
+    </script>
+</body>
+</html>

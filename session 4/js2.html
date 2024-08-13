@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input_id">
+    <h1 id="h1_id">Hi his s heading</h1>
+    <h2 id="h2_id">hi hello this is heading 2</h2>
+
+    <button onclick="change()">click</button>
+    <script>
+        
+        function change(){
+            let input_id = document.getElementById("input_id");
+            let val = input_id.value;
+            if (!val ){
+                document.getElementById("h2_id").innerHTML ="it is null please something in the input box";
+            }else{ 
+                document.getElementById("h2_id").innerHTML = val;
+            }
+              
+        }
+    </script>
+</body>
+</html>
