@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login page</h1>
+    <input type="txt" id="email">
+    <input type="password" id="password">
+    <button id="b1">click</button>
+
+    <script>
+        async function postApi() {
+            email = document.getElementById("email").value
+            password = document.getElementById("password").value
+
+            let data = {
+                   "email": email,
+                    "password": password
+                }
+
+                let res =  await fetch("https://reqres.in/api/users",{"method":"POST",body:JSON.stringify(data), headers: {"content-type":"application/json"}})   // this headers will tell the name and leaders including the id and created
+            let json = await res.json()
+            console.log(json)
+        }
+
+        re= document.getElementById("b1").addEventListener("click",postApi)
+        console.log(re)
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="select">
+        <option>val1</option>
+        <option>val2</option>
+        <option>val3</option>
+        <option>val4</option>
+    </select>
+    <h1 id="h1_id">helo</h1>
+
+</body>
+<script>
+    document.getElementById("select").addEventListener("change",() => {
+        let val = document.getElementById("select").value
+        document.getElementById("h1_id").innerHTML = val
+        
+    })
+</script>
+</html>

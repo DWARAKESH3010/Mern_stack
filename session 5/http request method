@@ -1,0 +1,7 @@
+http reqest method 
+
+1. get = retriving an single or multiplt resoucse
+2. post = creating a new resoucse
+3. patch = updatingan exting resource
+4. put = updating or creating new resoucse
+5. delete = destroying a resoucse
