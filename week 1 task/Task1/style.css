@@ -1,0 +1,189 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.h1_id{
+    text-align: center;
+    color:rgb(147, 128, 55);
+}
+
+.buttons {
+    background-image: url("hallstatt-3609863_640.jpg"); /* Replace with your image URL */
+    background-size: cover;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.container{ 
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.h1c_id{
+    text-align: center;
+    color:rgb(20, 39, 187);
+}
+   
+.info{
+    background-color: #785c07;
+    border-radius: 25px;
+    padding: 150px;
+    color: beige;
+    text-align: center;
+}
+
+.login{
+    max-width: 300px;
+    margin: 200px auto;
+    padding: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.name{
+    padding: 10px;
+    
+}
+.namei{
+    margin-bottom: 10px;
+}
+.pass{
+    margin-bottom: 20px;
+}
+
+.log_reg{
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border-radius: 25px;
+
+}
+.login_btn{
+    padding: 10px 10px;
+    margin: 50px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border-radius: 25px;
+    margin-left: 5px;
+}
+.h1_login{
+    color: #094064;
+}
+
+.reg{
+    max-width: 300px;
+    margin: 200px auto;
+    padding: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reg_namei{
+    margin-bottom: 20px;
+    margin-left: 80px;
+}
+.reg_number{
+    margin-bottom: 20px;
+    margin-left: 81px;
+}
+.reg_pass{
+    margin-bottom: 15px;
+    margin-left: 55px;
+}
+.pass{
+    margin-top: 10px;
+}
+.reg_submit{
+    padding: 10px 10px;
+    margin: 50px;
+    font-size: 16px;
+    color: white;
+    background-color: #3498db;
+    border-radius: 25px;
+    margin-left: 100px;
+}
+.h1_reg{
+    margin-left: 60px;
+    color: #0a324d;
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.gallery-item .on {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s ease;
+}
+
+.gallery-item:hover img {
+    opacity: 0.6; 
+}
+
+.gallery-item:hover .on {
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.image-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0; /* Initially hidden */
+    transition:  1s ease;
+}
+
+.gallery-item:hover .image-title {
+    opacity: 1; 
+}
+.h1_gallery{
+    text-align: center;
+    color:darkslategrey
+}
