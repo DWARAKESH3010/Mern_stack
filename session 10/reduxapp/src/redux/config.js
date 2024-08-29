@@ -5,7 +5,6 @@ const counterLogic = (state = 0, action)=>{
     switch (action.type) {
         case "add":
           return state + 1;
-          break;
         case "sub":
             return state - 1;
         default:
@@ -15,9 +14,20 @@ const counterLogic = (state = 0, action)=>{
         
 }
 
+const storeMyDetailsReducer =(state ={},action)=>{
+    switch(action.type){
+        case "saveDetails":
+            return action.data;
+        break;
+    }
+    return state;
+}
+
+
 export const myStore = configureStore({
     reducer:{
-        "counter":counterLogic
+        "counter":counterLogic,
+        "myDetails":storeMyDetailsReducer
     }
 })
 

@@ -10,7 +10,7 @@ const MeaningFinder = () => {
     
     if (name) {
       
-      const response = await fetch(`https://api.agify.io/?name=${name}`);
+      const response = await fetch(`https //api.agify.io/?name=${name}`);
 
             const data = await response.json()
       

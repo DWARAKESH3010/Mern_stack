@@ -1,31 +1,37 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux"
 import Header from "./Header";
+import { useState } from "react";
 
-
-function Home(){
-    const counterVal = useSelector((state) => state.counter);
+export default function Home(){
+    const counterval = useSelector((state)=>state.counter);
     const dispatch = useDispatch();
+    const [status,setStatus] = useState(true)
 
-    const add =() =>{
+    const add=()=>{
         dispatch({
-          type: "add"
+            type:"add"
         })
-      }
-    const sub =() =>{
+    }
+    const sub=()=>{
         dispatch({
-            type: "sub"
+            type:"sub"
         })
-      }
-
+    }
+    const storeMyDetails =()=>{
+        dispatch({
+            "type":"saveDetails",
+            "data" : {"name":"Dwara","email":"dwaraa@gmail.com"}
+        })
+    }
     return(
-        <div>
+        <div >
             <Header/>
-            <h1>Your age: {counterVal}</h1>
-            <input type = "button" value="Add" onClick={add}/>
-            <input type = "button" value="sub" onClick={sub}/>
+            <h1>WELCOME TO HOME PAGE</h1> <br/>
+            <h1>My name is:  {counterval}</h1><br/>
+            <input type="button" value="add" onClick={add}/><br/>
+            <input type="button" value ="sub" onClick={sub}/><br/>
+            <input type="button" value="store" onClick= {storeMyDetails}/>
+            {(status)?<p className="red">This is paragraph</p>:null}
         </div>
     )
-    
 }
-
-export default Home;
