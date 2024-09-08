@@ -24,7 +24,6 @@ app.post("/login",(req,res)=>{
     
 })
 
-let 
 
 app.listen(8080,()=>{
     console.log("server strated")
