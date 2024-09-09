@@ -30,7 +30,7 @@ app.get("/getemployee",async(req,res)=>{
         res.json({"msg":"you are correct"})
     }else{
         res.json({"msg":"you are wrong"})
-    }q
+    }
 });
 
 // for getting specific employee details from mongoDB(Database)
@@ -43,6 +43,14 @@ app.get("/listempbyname/:name",async(req,res)=>{
     res.status(200).json(list)
 })
 
+
+app.delete("deleteUserByName",(req,res) => {
+    let{name} = req.query
+    await client.connect()
+    await db.connect()
+    db.collection("employee").deleteOne({"name":name})
+    res.json({"msg":"user delete"})
+})
 // Start the Express server
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
