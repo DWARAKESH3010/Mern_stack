@@ -4,7 +4,7 @@ const { MongoClient } = require('mongodb');
 var app = express();
 app.use(express.json());
 const ex = "office"
-const url = 'mongodb+srv://Dwarakesh2002:dwarakesh2002@cluster0.sastj.mongodb.net/';
+const url = 'mongodb+srv://anuj123:jangiranuj2000@cluster0.qq2p4.mongodb.net/';
 const client = new MongoClient(url);
 app.post("/createEmployee",async(req,res)=>{
     let {name,email,password,mobile_no} = req.body;
@@ -25,12 +25,8 @@ app.post("/createEmployee",async(req,res)=>{
 app.get("/getemployee",async(req,res)=>{
     await client.connect();
     let db = client.db(ex);
-    let list = await db.collection('employee').find({"email":name,"password":password}).toArray();
-    if (list.length >0){
-        res.json({"msg":"you are correct"})
-    }else{
-        res.json({"msg":"you are wrong"})
-    }
+    let list = await db.collection('employee').find({}).toArray();
+    res.status(200).json(list)
 });
 
 // for getting specific employee details from mongoDB(Database)
@@ -42,15 +38,24 @@ app.get("/listempbyname/:name",async(req,res)=>{
     let list = await db.collection('employee').find({name:name}).toArray();
     res.status(200).json(list)
 })
-
-
-app.delete("deleteUserByName",(req,res) => {
-    let{name} = req.query
-    await client.connect()
-    await db.connect()
-    db.collection("employee").deleteOne({"name":name})
-    res.json({"msg":"user delete"})
+app.delete("/deleteUserByName",async(req,res)=>{
+    let {name} = req.query;
+    await client.connect();
+    let db=client.db(ex)
+    await db.collection("employee").deleteOne({"name":name})
+    res.json({"msg":"user deleted"})
 })
+app.put("/updatepassword",async(req,res)=>{
+    let {name,password} = req.query;
+    await db.collection("employee").updateOne({"name":name},{$set:{"password":password}});
+res.json({"msg":"password updated"})    
+})
+
+app.post("/updatepassword",async(req, res)=>{
+    let{name,password} = req.body;
+})
+
+db.collection("employee").updateOne({"name":name})
 // Start the Express server
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
