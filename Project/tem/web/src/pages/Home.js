@@ -81,7 +81,7 @@ const Home = () => {
                         
                     </div>
                 </div>
-            </div>
+            </div>                  
         </div>
     </div>
     <div class="container-fluid pt-5">
